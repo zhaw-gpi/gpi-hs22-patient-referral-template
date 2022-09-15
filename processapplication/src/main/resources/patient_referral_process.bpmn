@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1rr6jw8" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.2.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.17.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1rr6jw8" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.2.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.17.0">
   <bpmn:collaboration id="Collaboration_1ktshka">
     <bpmn:participant id="StrategischesProzessmodellParticipant" name="Strategisches Prozessmodell" />
     <bpmn:participant id="PatientenzuweisungsprozessParticipant" name="Patientenzuweisungsprozess" processRef="Process_0accrpt" />
@@ -15,8 +15,8 @@
     <bpmn:participant id="PatientinParticipant1" name="Patient:in" />
     <bpmn:participant id="KISParticipant" name="KIS" />
     <bpmn:messageFlow id="ZuweisungsschreibenMessageFlow" name="Zuweisungs-schreiben" sourceRef="ZuweiserinParticipant" targetRef="ZuweisungsantragErhaltenStartEvent" />
-    <bpmn:messageFlow id="TerminVorschlagMessageFlow" name="Termin-&#10;vorschlag" sourceRef="KonsultationsterminVereinbarenTask" targetRef="PatientinParticipant" />
-    <bpmn:messageFlow id="TerminbestatigungMessageFlow" name="Termin-bestätigung" sourceRef="PatientinParticipant" targetRef="KonsultationsterminVereinbarenTask" />
+    <bpmn:messageFlow id="TerminVorschlagMessageFlow" name="Termin-&#10;vorschlag" sourceRef="KonsultationsterminVereinbarenTask2" targetRef="PatientinParticipant" />
+    <bpmn:messageFlow id="TerminbestatigungMessageFlow" name="Termin-bestätigung" sourceRef="PatientinParticipant" targetRef="KonsultationsterminVereinbarenTask2" />
     <bpmn:messageFlow id="ZuweisungsinformationenInklAllfalligeAnhangeMessageFlow" name="Zuweisungs-informationen inkl. allfällige Anhänge" sourceRef="ZuweiserinParticipant1" targetRef="ZuweisungStrukturiertEingereichtStartEvent" />
     <bpmn:messageFlow id="PostalischesZuweisungsschreibenMessageFlow" name="Postalisches Zuweisungs-schreiben" sourceRef="ZuweiserinParticipant1" targetRef="ZuweisungsschreibenErhaltenStartEvent" />
     <bpmn:messageFlow id="ZuweisungAlsEMailMessageFlow" name="Zuweisung&#10;als E-Mail" sourceRef="ZuweiserinParticipant1" targetRef="ZuweisungsEMailErhaltenStartEvent" />
@@ -29,15 +29,15 @@
     <bpmn:messageFlow id="AblehnungInklBegrundungPerEMailOderBriefMessageFlow" name="Ablehnung inkl. Begründung per E-Mail oder Brief" sourceRef="ZuweiserinUberAblehnungInformierenTask" targetRef="ZuweiserinParticipant2" />
     <bpmn:messageFlow id="GenehmigungMessageFlow" name="Genehmigung" sourceRef="ZuweisungsantragFormellGenehmigenTask" targetRef="ZuweisungsantragFormellPrufenUndErganzenTask" />
     <bpmn:messageFlow id="AblehnungInklBegrundungMessageFlow" name="Ablehnung inkl. Begründung" sourceRef="AntragAblehnenTask" targetRef="ZuweisungsantragFormellPrufenUndErganzenTask" />
-    <bpmn:messageFlow id="AufgabeMitInformationenMessageFlow1" name="Aufgabe mit Informationen" sourceRef="KonsultationsterminVereinbarenTask1" targetRef="AuftragFurTerminvereinbarungErhaltenEvent" />
-    <bpmn:messageFlow id="TerminVorgabenMessageFlow" name="Termin-&#10;Vorgaben" sourceRef="KonsultationsterminVereinbarenTask1" targetRef="TerminVorgabenEinsehenTask" />
+    <bpmn:messageFlow id="AufgabeMitInformationenMessageFlow1" name="Aufgabe mit Informationen" sourceRef="KonsultationsterminVereinbarenTask" targetRef="AuftragFurTerminvereinbarungErhaltenEvent" />
+    <bpmn:messageFlow id="TerminVorgabenMessageFlow" name="Termin-&#10;Vorgaben" sourceRef="KonsultationsterminVereinbarenTask" targetRef="TerminVorgabenEinsehenTask" />
     <bpmn:messageFlow id="TerminanfrageZBPerTelefonMessageFlow" name="Terminanfrage z.B. per Telefon" sourceRef="TerminVereinbarenTask" targetRef="PatientinParticipant1" />
     <bpmn:messageFlow id="TerminbestatigungMessageFlow1" name="Termin-bestätigung" sourceRef="PatientinParticipant1" targetRef="TerminVereinbarenTask" />
     <bpmn:messageFlow id="PatientenUndFalldatenMessageFlow" name="Patienten- und Falldaten" sourceRef="PatientinFallInKISErfassenTask" targetRef="KISParticipant" />
     <bpmn:messageFlow id="VorgesehenerBehandlungszeitraumUndArztinMessageFlow" name="Vorgesehene:r Behandlungs-zeitraum und Ärzt:in" sourceRef="KISParticipant" targetRef="TerminrelevanteInformationenAusKISLesenTask" />
     <bpmn:messageFlow id="TriageAuftragMessageFlow" name="Triage-Auftrag" sourceRef="FallTriagierenTask" targetRef="TriageAuftragErhaltenStartEvent" />
     <bpmn:messageFlow id="StatusErledigtMessageFlow" name="Status&#10;Erledigt" sourceRef="TriageAuftragAlsErledigtMarkierenTask" targetRef="FallTriagierenTask" />
-    <bpmn:messageFlow id="StatusErledigtMessageFlow1" name="Status&#10;Erledigt" sourceRef="TerminAuftragAlsErledigtMarkierenTask" targetRef="KonsultationsterminVereinbarenTask1" />
+    <bpmn:messageFlow id="StatusErledigtMessageFlow1" name="Status&#10;Erledigt" sourceRef="TerminAuftragAlsErledigtMarkierenTask" targetRef="KonsultationsterminVereinbarenTask" />
   </bpmn:collaboration>
   <bpmn:process id="Process_0accrpt" isExecutable="false">
     <bpmn:laneSet id="LaneSet_1jce4cv">
@@ -48,7 +48,7 @@
       </bpmn:lane>
       <bpmn:lane id="PatadministratorinLane" name="Pat.administrator:in">
         <bpmn:flowNodeRef>ZuweisungsantragFormellPrufenTask</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>KonsultationsterminVereinbarenTask</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>KonsultationsterminVereinbarenTask2</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="ArztinLane2" name="Ärzt:in">
         <bpmn:flowNodeRef>FallTriagierenTask1</bpmn:flowNodeRef>
@@ -84,12 +84,12 @@
     <bpmn:endEvent id="PatientinZugewiesenEndEvent" name="Patient:in zugewiesen">
       <bpmn:incoming>Flow_05iq96a</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:task id="KonsultationsterminVereinbarenTask" name="Konsultations-termin vereinbaren">
+    <bpmn:task id="KonsultationsterminVereinbarenTask2" name="Konsultations-termin vereinbaren">
       <bpmn:incoming>Flow_0k0nu8q</bpmn:incoming>
       <bpmn:outgoing>Flow_05iq96a</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:sequenceFlow id="Flow_0k0nu8q" sourceRef="FallTriagierenTask1" targetRef="KonsultationsterminVereinbarenTask" />
-    <bpmn:sequenceFlow id="Flow_05iq96a" sourceRef="KonsultationsterminVereinbarenTask" targetRef="PatientinZugewiesenEndEvent" />
+    <bpmn:sequenceFlow id="Flow_0k0nu8q" sourceRef="FallTriagierenTask1" targetRef="KonsultationsterminVereinbarenTask2" />
+    <bpmn:sequenceFlow id="Flow_05iq96a" sourceRef="KonsultationsterminVereinbarenTask2" targetRef="PatientinZugewiesenEndEvent" />
     <bpmn:task id="ZustandigeTriageArztinErmittelnTask" name="Zuständige Triage-Ärzt:in ermitteln">
       <bpmn:incoming>Flow_0nx25px</bpmn:incoming>
       <bpmn:outgoing>Flow_135gfv3</bpmn:outgoing>
@@ -102,7 +102,7 @@
         <bpmn:documentation>- Dieses findet aber direkt im KIS statt und wird hier nur bestätigt, dass erledigt</bpmn:documentation>
         <bpmn:flowNodeRef>PatientinZugewiesenEndEvent1</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ZuweisungsantragFormellPrufenUndErganzenTask</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>KonsultationsterminVereinbarenTask1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>KonsultationsterminVereinbarenTask</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="ZuweiserinInputmanagerinLane" name="Zuweiser:in / Inputmanager:in">
         <bpmn:flowNodeRef>ZuweisungStrukturiertEingereichtStartEvent</bpmn:flowNodeRef>
@@ -111,8 +111,8 @@
         <bpmn:flowNodeRef>PrufungErfolgreichGateway</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>ZuweisungFormellAbgelehntEndEvent</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>PatientinFallInKISErfassenTask</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>ZustandigeTriageArztinErmittelnTask1</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>TerminrelevanteInformationenAusKISLesenTask</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>ZustandigeTriageArztinErmittelnTask1</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="ArztinLane" name="Ärzt:in">
         <bpmn:flowNodeRef>FallTriagierenTask</bpmn:flowNodeRef>
@@ -124,9 +124,39 @@
     <bpmn:sequenceFlow id="Flow_0x862al" sourceRef="PatientinFallInKISErfassenTask" targetRef="ZustandigeTriageArztinErmittelnTask1" />
     <bpmn:sequenceFlow id="Flow_1vrxdph" sourceRef="ZustandigeTriageArztinErmittelnTask1" targetRef="FallTriagierenTask" />
     <bpmn:sequenceFlow id="Flow_10738wk" sourceRef="FallTriagierenTask" targetRef="TerminrelevanteInformationenAusKISLesenTask" />
-    <bpmn:sequenceFlow id="Flow_0ocxv4i" sourceRef="TerminrelevanteInformationenAusKISLesenTask" targetRef="KonsultationsterminVereinbarenTask1" />
+    <bpmn:sequenceFlow id="Flow_0ocxv4i" sourceRef="TerminrelevanteInformationenAusKISLesenTask" targetRef="KonsultationsterminVereinbarenTask" />
     <bpmn:sequenceFlow id="NeinSequenceFlow" name="Nein" sourceRef="PrufungErfolgreichGateway" targetRef="ZuweisungFormellAbgelehntEndEvent" />
     <bpmn:startEvent id="ZuweisungStrukturiertEingereichtStartEvent" name="Zuweisung strukturiert eingereicht">
+      <bpmn:documentation>Anforderungen
+===========
+Formular mit folgenden Feldern:
+- Patienteninformationen:
+  - Versichertennummer [= AHV-Nummer] (pat_insurance_number, z.B. 75688888888888)
+  - Vorname (pat_firstname) 
+  - Nachname (pat_lastname) 
+  - Geburtsdatum (pat_birthday)
+  - PLZ (pat_plz)
+  - Versicherten-Typ (pat_insurance_type) mit drei möglichen Werten:
+    - 1 - Privat versichert
+    - 2 - Halbprivat versichert
+    - 3 - Allgemein versichert
+- Fallinformationen:
+  - Zuweiser-ID (case_ref_id)
+  - Zuweisungsgrund (case_ref_reasons, kann lange Texte enthalten)
+  - Notfall? (case_is_emergency, true oder false)
+  - Gewünschtes Eintrittsdatum (case_desired_date)
+  - Zugehörige Abteilung (case_department)
+
+Beim Anlegen einer neuen Prozessinstanz soll automatisch ein Business Key generiert werden mit dem Aufbau "C_JJJJ-MM-TT_HH-MM-SS_LOGGEDINUSER", wobei beim Datum die aktuelle Uhrzeit auf dem Server übernommen werden soll.
+
+Wenn der Benutzer das Formular absendet, sollen allfällige Fehler, die später in der Prozessinstanz auftreten, nicht dazu führen, dass er das Formular nicht erfolgreich absenden kann.
+
+Weitere Hinweise
+=============
+In der Realität könnte man hier typischerweise weitere Angaben erfassen insbesondere Dateianhänge.
+
+Und das Formular würde sinnvollerweise auch von Haus aus mit weiteren Informationen bestückt (z.B. automatisch Name, Vorname, usw. aus KIS ausgelesen).
+</bpmn:documentation>
       <bpmn:outgoing>Flow_0sqckpy</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:endEvent id="ZuweisungFormellAbgelehntEndEvent" name="Zuweisung&#10;formell&#10;abgelehnt">
@@ -137,33 +167,119 @@
       <bpmn:outgoing>JaSequenceFlow</bpmn:outgoing>
       <bpmn:outgoing>NeinSequenceFlow</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:sequenceFlow id="Flow_11cxejl" sourceRef="KonsultationsterminVereinbarenTask1" targetRef="PatientinZugewiesenEndEvent1" />
+    <bpmn:sequenceFlow id="Flow_11cxejl" sourceRef="KonsultationsterminVereinbarenTask" targetRef="PatientinZugewiesenEndEvent1" />
     <bpmn:endEvent id="PatientinZugewiesenEndEvent1" name="Patient:in zugewiesen">
       <bpmn:incoming>Flow_11cxejl</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:task id="ZuweisungsantragFormellPrufenUndErganzenTask" name="Zuweisungs-antrag formell prüfen und ergänzen">
+      <bpmn:documentation>Anforderungen
+===========
+Aufgabe soll allen Mitarbeitenden aus der Gruppe patadmin angezeigt werden.
+
+Formular mit folgenden Feldern:
+- Alle aus dem Formular im Startereignis und zusätzlich ...
+- Formell akzeptiert? (formally_approved, true oder false)
+
+Wenn der Benutzer das Formular absendet, sollen allfällige Fehler, die später in der Prozessinstanz auftreten, nicht dazu führen, dass er das Formular nicht erfolgreich absenden kann.</bpmn:documentation>
+      <bpmn:extensionElements />
       <bpmn:incoming>Flow_0sqckpy</bpmn:incoming>
       <bpmn:outgoing>Flow_1jbrkm9</bpmn:outgoing>
     </bpmn:task>
     <bpmn:task id="PatientinFallInKISErfassenTask" name="Patient:in &#38; Fall in KIS erfassen">
+      <bpmn:documentation>Anforderungen
+===========
+Die bisher erfassten Informationen zu Patient und Fall sollen ins KIS übertragen werden. Konkret sind folgende Schritte erforderlich:
+- Prüfen, ob die Patient:in bereits im KIS erfasst ist anhand Versichertennummer.
+  - Falls nicht vorhanden: neu anlegen mit den Attributen Versichertennummer, Versicherungstyp, Vorname, Nachname, Geburtsdatum und PLZ
+  - Falls vorhanden: Sofern erforderlich, Attribute aktualisieren (z.B. PLZ)
+- Einen neuen Fall anlegen im KIS mit den Attributen  Zuweisungsgrund, Zuweiser-ID, Ist-Notfall, gewünschtes Eintrittsdatum und zugehörige Abteilung sowie diesen Fall mit der Patient:in verknüpfen.
+- Die vom REST-Service des KIS erhaltene Fall-ID in der Prozessvariable case_id persistieren.
+
+Die Implementierung soll über Delegate Expression mit einem JavaDelegate laufen.
+
+Weitere Hinweise
+=============
+In der Realität wäre hier ganz vieles deutlich umfangreicher und komplexer, z.B. es könnte sich um eine weitere Zuweisung zum gleichen Fall handeln, jemand könnte keine Versichertennummer haben, jemand weist sich selber zu, das Schreiben ins KIS schlägt aus zig Gründen fehl, usw.</bpmn:documentation>
       <bpmn:incoming>JaSequenceFlow</bpmn:incoming>
       <bpmn:outgoing>Flow_0x862al</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:task id="ZustandigeTriageArztinErmittelnTask1" name="Zuständige Triage-Ärzt:in ermitteln">
-      <bpmn:incoming>Flow_0x862al</bpmn:incoming>
-      <bpmn:outgoing>Flow_1vrxdph</bpmn:outgoing>
-    </bpmn:task>
     <bpmn:task id="FallTriagierenTask" name="Fall triagieren">
+      <bpmn:documentation>Anforderungen
+===========
+Aufgabe soll der zuständigen Triage-Ärtz:in zugewiesen werden.
+
+Formular mit folgenden Feldern:
+- Schreibgeschützt (alle Felder, da Resultat der Triage in KIS festgehalten wird)
+  - Fall-ID (case_id)
+  - Patienten-Nachname (pat_lastname)
+  - Patienten-Geburtsdatum (pat_birthday)
+
+Wenn der Benutzer das Formular absendet, sollen allfällige Fehler, die später in der Prozessinstanz auftreten, nicht dazu führen, dass er das Formular nicht erfolgreich absenden kann.
+
+Weitere Hinweise
+=============
+Wie dem Prozessmodell der Ärzt:in entnommen werden kann, wird die eigentliche Triage ausserhalb des Prozessportals vorgenommen und das Ergebnis im KIS festgehalten. Die Prozessapplikation dient also "nur" zu folgenden Dingen:
+- darüber zu informieren, dass eine Triage erforderlich ist
+- über Fall-ID (sowie als Kontrolle Nachname und Geburtsdatum der Patient:in) sicherzustellen, dass der richtige Fall vom Benutzer händisch im KIS geöffnet wird
+- von der Ärzt:in bestätigen zu lassen, dass die Triage erfolgreich durchgeführt wurde (dass dies allenfalls nicht erfolgreich gelingt, wird in diesem Prototyp nicht umgesetzt)</bpmn:documentation>
       <bpmn:incoming>Flow_1vrxdph</bpmn:incoming>
       <bpmn:outgoing>Flow_10738wk</bpmn:outgoing>
     </bpmn:task>
     <bpmn:task id="TerminrelevanteInformationenAusKISLesenTask" name="Terminrelevante Informationen aus KIS lesen">
+      <bpmn:documentation>Anforderungen
+============
+Für den nachfolgenden Task sollen folgende Informationen aus dem KIS in Prozessvariablen (Bezeichnung in Klammern) extrahiert werden:
+- Patienten-Nachname (pat_lastname)
+- Patienten-Geburtsdatum (pat_birthday)
+- Frühstmögliches Datum für Termin (case_appointment_earliest)
+- Spätmöglichstes Datum für Termin (case_appointment_latest)
+
+
+Weitere Hinweise
+=============
+Diese Anforderung soll nicht in der Prozessapplikation selbst realisiert werden, sondern über einen entsprechend gestalteten Microservice, der als External Task Client auf Aufgaben des Topics GetAppointmentInformation abonniert.</bpmn:documentation>
       <bpmn:incoming>Flow_10738wk</bpmn:incoming>
       <bpmn:outgoing>Flow_0ocxv4i</bpmn:outgoing>
     </bpmn:task>
-    <bpmn:task id="KonsultationsterminVereinbarenTask1" name="Konsultations-termin vereinbaren">
+    <bpmn:task id="KonsultationsterminVereinbarenTask" name="Konsultations-termin vereinbaren">
+      <bpmn:documentation>Anforderungen
+===========
+Aufgabe soll allen Mitarbeitenden aus der Gruppe patadmin angezeigt werden.
+
+Formular mit folgenden Feldern:
+- Schreibgeschützt
+  - Fall-ID (case_id)
+  - Patienten-Nachname (pat_lastname)
+  - Patienten-Geburtsdatum (pat_birthday)
+  - Frühstmögliches Datum für Termin (case_appointment_earliest)
+  - Spätmöglichstes Datum für Termin (case_appointment_latest)
+
+Wenn der Benutzer das Formular absendet, sollen allfällige Fehler, die später in der Prozessinstanz auftreten, nicht dazu führen, dass er das Formular nicht erfolgreich absenden kann.
+
+Weitere Hinweise
+=============
+Wie dem Prozessmodell der Patientenadministration entnommen werden kann, wird die eigentliche Terminvereinbarung z.B. telefonisch durchgeführt und das Ergebnis im KIS festgehalten. Die Prozessapplikation dient also "nur" zu folgenden Dingen:
+- darüber zu informieren, dass ein Termin vereinbart werden muss
+- über Fall-ID (sowie als Kontrolle Nachname und Geburtsdatum der Patient:in) sicherzustellen, dass der richtige Fall vom Benutzer händisch im KIS geöffnet wird
+- mitzugeben, in welchem Zeitraum der Termin liegen muss (steht zusätzlich auch im KIS, aber eventuell etwas versteckt)
+- von der Patientenadministration bestätigen zu lassen, dass ein Termin vereinbart wurde</bpmn:documentation>
       <bpmn:incoming>Flow_0ocxv4i</bpmn:incoming>
       <bpmn:outgoing>Flow_11cxejl</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="ZustandigeTriageArztinErmittelnTask1" name="Zuständige Triage-Ärzt:in ermitteln">
+      <bpmn:documentation>Anforderungen
+===========
+Ermittlung über Entscheidungstabelle in DMN der zuständigen Triage-Ärzt:in als Output in Prozessvariable responsible_physician basierend auf Input der Prozessvariablen Notfall, zugehörige Abteilung und Versicherungstyp mit folgenden Regeln:
+- Alle Notfälle gehen an die Ärzt:in emer
+- Alle Nicht-Notfälle der Abteilung Dermatologie und Neurologie gehen an die Ärzt:in dene
+- Privatversicherte Nicht-Notfälle der Abteilung Gastroenterologie gehen an die Ärzt:in gapr
+- Nicht-Privatversicherte Nicht-Notfälle der Abteilung Gastroenterologie gehen an die Ärzt:in gaen
+
+Weitere Hinweise
+=============
+Zugegebenermassen ist hier die Nutzung von DMN etwas gesucht, aber denkbar. In der Realität würde man es aber entweder deutlich simpler lösen (unpersönliche Postfächer statt Einzelbenutzer) oder deutlich komplexer, da z.B. eine Ärzt:in in den Ferien sein kann und dann eine Stellvertretung hinterlegt sein müsste, usw. Hinzu kommt, dass ein Spital natürlich deutlich mehr als bloss drei Abteilungen hat...</bpmn:documentation>
+      <bpmn:incoming>Flow_0x862al</bpmn:incoming>
+      <bpmn:outgoing>Flow_1vrxdph</bpmn:outgoing>
     </bpmn:task>
   </bpmn:process>
   <bpmn:process id="Process_1b3ufno" isExecutable="false">
@@ -455,7 +571,7 @@
           <dc:Bounds x="1512" y="355" width="58" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_16zil2m_di" bpmnElement="KonsultationsterminVereinbarenTask">
+      <bpmndi:BPMNShape id="Activity_16zil2m_di" bpmnElement="KonsultationsterminVereinbarenTask2">
         <dc:Bounds x="1380" y="410" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
@@ -577,17 +693,17 @@
       <bpmndi:BPMNShape id="Activity_1jl9e5l_di" bpmnElement="PatientinFallInKISErfassenTask">
         <dc:Bounds x="1030" y="1740" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1flcb5v_di" bpmnElement="ZustandigeTriageArztinErmittelnTask1">
-        <dc:Bounds x="1180" y="1740" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_05c18bu_di" bpmnElement="FallTriagierenTask">
         <dc:Bounds x="1360" y="1610" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0n6rm3i_di" bpmnElement="TerminrelevanteInformationenAusKISLesenTask">
         <dc:Bounds x="1540" y="1740" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1p2h0if_di" bpmnElement="KonsultationsterminVereinbarenTask1">
+      <bpmndi:BPMNShape id="Activity_0xy021y_di" bpmnElement="KonsultationsterminVereinbarenTask">
         <dc:Bounds x="1720" y="1980" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0f06q78_di" bpmnElement="ZustandigeTriageArztinErmittelnTask1">
+        <dc:Bounds x="1180" y="1740" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Participant_1xb4j26_di" bpmnElement="ZuweiserinParticipant1" isHorizontal="true">
         <dc:Bounds x="160" y="1410" width="300" height="60" />
@@ -989,12 +1105,12 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_04stfgu_di" bpmnElement="ErganzendeInformationenMessageFlow" bioc:stroke="#e53935" color:border-color="#e53935">
-        <di:waypoint x="1060" y="2200" />
-        <di:waypoint x="1060" y="2110" />
+        <di:waypoint x="1080" y="2200" />
+        <di:waypoint x="1080" y="2110" />
         <di:waypoint x="800" y="2110" />
         <di:waypoint x="800" y="2060" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1066" y="2116" width="68" height="27" />
+          <dc:Bounds x="1086" y="2116" width="68" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1qrtbqz_di" bpmnElement="EMailMitAngabeFehlenderInformationenMessageFlow">
@@ -1075,10 +1191,11 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0dzdx6r_di" bpmnElement="VorgesehenerBehandlungszeitraumUndArztinMessageFlow" bioc:stroke="#e53935" color:border-color="#e53935">
-        <di:waypoint x="1590" y="1090" />
-        <di:waypoint x="1590" y="1740" />
+        <di:waypoint x="2000" y="1090" />
+        <di:waypoint x="2000" y="1760" />
+        <di:waypoint x="1640" y="1760" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1604" y="1384" width="72" height="53" />
+          <dc:Bounds x="2014" y="1394" width="72" height="53" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1hohtbl_di" bpmnElement="TriageAuftragMessageFlow" bioc:stroke="#8e24aa" color:border-color="#8e24aa">
